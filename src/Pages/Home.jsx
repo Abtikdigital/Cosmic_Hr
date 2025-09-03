@@ -73,7 +73,7 @@ function Home() {
                 {link.label}
                 {/* underline */}
                 <span
-                  className={`absolute left-0 -bottom-1 h-[3px] rounded-lg bg-[#0303C0] transition-all duration-300
+                  className={`absolute left-0 -bottom-1 h-[3px] rounded-xl bg-[#0303C0] transition-all duration-300
                   ${active === link.id ? "w-full" : "w-0 group-hover:w-full"}
                 `}
                 ></span>

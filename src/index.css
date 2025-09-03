@@ -8,8 +8,12 @@
   @apply font-semibold text-6xl;
 }
 
-.paragraph-1{
-  @apply text-[#757575]
+.heading-3{
+  @apply font-semibold text-lg md:text-xl
+}
+
+.paragraph-1 {
+  @apply text-[#757575];
 }
 .font-1 {
   font-family: "Inter";
