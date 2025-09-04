@@ -88,7 +88,7 @@ const Blog = () => {
   };
 
   return (
-    <section className="p-6 md:p-12 bg-gray-50 dark:bg-[#0f0f0f] scroll-mt-[50px]" id="blog" ref={ref}>
+    <section className="p-6 md:p-12 bg-gray-50  scroll-mt-[50px]" id="blog" ref={ref}>
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
