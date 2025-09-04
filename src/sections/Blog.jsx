@@ -108,7 +108,7 @@ const Blog = () => {
         {blogs.map((blog, index) => (
           <motion.div
             key={index}
-            className="bg-white dark:bg-[#1a1a1a] rounded-xl space-y-3 transition cursor-pointer"
+            className="bg-white rounded-xl space-y-3 transition cursor-pointer"
             onClick={() => setSelectedBlog(blog)}
             variants={cardVariants}
           >
