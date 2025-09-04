@@ -26,7 +26,6 @@ function Hero(props) {
     },
   };
 
-  // Specific animations for content
   const headingVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -58,7 +57,7 @@ function Hero(props) {
     <section className="p-6 md:p-10 lg:p-16 scroll-mt-[50px]" id="home">
       <div
         ref={ref}
-        className="min-h-[80vh] rounded-xl flex flex-col justify-center items-center relative"
+        className="min-h-[60vh] md:min-h-[80vh] rounded-xl flex flex-col justify-center items-center relative overflow-hidden"
       >
         {/* Background image */}
         <motion.div
@@ -71,7 +70,7 @@ function Hero(props) {
 
         {/* Card container */}
         <motion.div
-          className="relative bg-white/55 backdrop-blur-md p-8 md:p-16 rounded-xl shadow-lg space-y-6 max-w-3xl text-center border border-white/40"
+          className="relative bg-white/55 backdrop-blur-md p-8 md:p-16 rounded-xl shadow-lg space-y-6 max-w-xs md:max-w-3xl text-center border border-white/40 mx-4"
           variants={cardVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}

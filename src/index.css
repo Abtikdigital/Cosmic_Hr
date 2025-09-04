@@ -5,7 +5,7 @@
  text-base text-white from-[#3FC0F6] to-[#0302C1] py-2.5  transition-all duration-300 hover:bg-gradient-to-r cursor-pointer px-6 rounded-xl shadow-2xl;
 }
 .heading-1 {
-  @apply font-semibold text-6xl;
+  @apply font-semibold text-4xl md:text-5xl lg:text-6xl;
 }
 
 .heading-3{
