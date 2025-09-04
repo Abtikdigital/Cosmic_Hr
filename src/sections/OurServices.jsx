@@ -1,36 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
     name: "End-to-End HR Services",
     description: "Streamlined HR for recruitment, payroll, and compliance.",
     highlight: "Saves time, boosts business growth.",
-    img: "https://images.unsplash.com/photo-1516321310765-79e5e2055a17?w=900&auto=format&fit=crop&q=60"
+    img: "https://images.unsplash.com/photo-1516321310765-79e5e2055a17?w=900&auto=format&fit=crop&q=60",
   },
   {
     name: "HRMS Software (SaaS)",
     description: "Cloud-based platform for payroll and performance tracking.",
     highlight: "Flexible subscription plans.",
-    img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=900&auto=format&fit=crop&q=60"
+    img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=900&auto=format&fit=crop&q=60",
   },
   {
     name: "Workforce Empowerment",
     description: "Employs women for inclusive, stable workplaces.",
     highlight: "Bridges India’s gender gap.",
-    img: "https://images.unsplash.com/photo-1573164574511-73c773193279?w=900&auto=format&fit=crop&q=60"
+    img: "https://images.unsplash.com/photo-1573164574511-73c773193279?w=900&auto=format&fit=crop&q=60",
   },
   {
     name: "Learning & Development",
     description: "Training for skills and employee engagement.",
     highlight: "Enhances workforce productivity.",
-    img: "https://images.unsplash.com/photo-1516321165247-7d868bd47e26?w=900&auto=format&fit=crop&q=60"
-  }
+    img: "https://images.unsplash.com/photo-1516321165247-7d868bd47e26?w=900&auto=format&fit=crop&q=60",
+  },
 ];
 
 function OurServices() {
   const [serviceIndex, setServiceIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   const updateServiceCarousel = (newIndex) => {
     if (animating) return;
@@ -72,15 +79,28 @@ function OurServices() {
 
   return (
     <section
+      ref={ref}
       className="px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16 text-center space-y-6 scroll-mt-[50px]"
       id="services"
     >
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+      {/* Heading + Subtext */}
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="text-2xl sm:text-3xl md:text-4xl font-bold"
+      >
         Solution: <span className="text-[#0B1CC8]">HR Services</span>
-      </h2>
-      <p className="text-base sm:text-lg max-w-2xl mx-auto">
+      </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-base sm:text-lg max-w-2xl mx-auto"
+      >
         Empowering businesses with innovative HR solutions.
-      </p>
+      </motion.p>
 
       {/* Carousel */}
       <div className="w-full max-w-7xl h-[450px] relative mx-auto overflow-hidden">
@@ -99,7 +119,8 @@ function OurServices() {
           onTouchEnd={handleTouchEnd}
         >
           {services.map((service, i) => {
-            const offset = (i - serviceIndex + services.length) % services.length;
+            const offset =
+              (i - serviceIndex + services.length) % services.length;
 
             let className =
               "absolute w-[280px] sm:w-[340px] md:w-[400px] h-[400px] rounded-xl overflow-hidden bg-white shadow-xl transition-all duration-700 ease-in-out flex flex-col";
@@ -117,10 +138,13 @@ function OurServices() {
             }
 
             return (
-              <div
+              <motion.div
                 key={i}
                 className={className}
                 onClick={() => updateServiceCarousel(i)}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
               >
                 <img
                   src={service.img}
@@ -138,7 +162,7 @@ function OurServices() {
                     <li>{service.highlight}</li>
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -153,7 +177,12 @@ function OurServices() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-4">
+      <motion.div
+        className="flex justify-center gap-2 mt-4"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
         {services.map((_, i) => (
           <div
             key={i}
@@ -163,7 +192,7 @@ function OurServices() {
             onClick={() => updateServiceCarousel(i)}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
