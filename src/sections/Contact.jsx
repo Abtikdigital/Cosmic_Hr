@@ -37,7 +37,7 @@ function Contact() {
 
   return (
     <div className="p-6 md:p-10 lg:p-16 scroll-mt-[50px]" id="contact">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6" ref={ref}>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10" ref={ref}>
         <motion.div
           variants={sectionVariants}
           initial="hidden"

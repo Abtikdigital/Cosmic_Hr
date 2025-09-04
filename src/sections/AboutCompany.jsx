@@ -39,7 +39,7 @@ function AboutCompany() {
     <div className="p-6 md:p-10 lg:p-16 scroll-mt-[50px] overflow-hidden" id="about">
       <motion.section
         ref={ref}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
         variants={container}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}

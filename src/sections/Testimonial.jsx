@@ -83,7 +83,7 @@ function Testimonial() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="bg-[#0B1CC8] p-6 md:p-10 flex rounded-xl gap-6 items-start shadow-lg h-full">
+              <div className="bg-[#0B1CC8] p-6 md:p-10 flex rounded-xl gap-6 md:gap-10 items-start shadow-lg h-full">
                 <div className="flex-shrink-0">
                   <div className="bg-gray-400 text-white h-12 w-12 flex justify-center items-center rounded-full font-bold">
                     {data?.name?.split(" ")?.map((n) => n.charAt(0).toUpperCase()).join("")}

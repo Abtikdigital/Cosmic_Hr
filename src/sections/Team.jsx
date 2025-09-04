@@ -33,7 +33,7 @@ function Team() {
       </motion.h2>
 
       {/* Team Members */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
         {teamMembers.map((member, i) => (
           <motion.div
             key={i}
