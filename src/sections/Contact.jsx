@@ -17,7 +17,7 @@ function Contact() {
       opacity: 1, 
       y: 0, 
       transition: { 
-        duration: 0.6,
+        duration: 0.8,
       }
     },
   };
@@ -30,7 +30,7 @@ function Contact() {
       y: 0, 
       transition: { 
         duration: 0.6,
-        delay: 0.3, // Delay right section by 0.3 seconds after left
+        delay: 0.8, // Delay right section by 0.3 seconds after left
       }
     },
   };
