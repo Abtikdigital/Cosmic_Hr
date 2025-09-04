@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../assets/Logo/Logo.png";
-import BgImage1 from "../assets/Hero/BgImage1.jpg"
+import BgImage1 from "../assets/Hero/BgImage1.jpg";
 import Contact from "../sections/Contact";
 import ClientStats from "../sections/ClientStats";
 import AboutCompany from "../sections/AboutCompany";
@@ -8,6 +8,7 @@ import OurServices from "../sections/OurServices";
 import Team from "../sections/Team";
 import Testimonial from "../sections/Testimonial";
 import Footer from "../sections/Footer";
+import Blog from "../sections/Blog";
 const navLinks = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -127,10 +128,8 @@ function Home() {
         )}
       </nav>
       {/* Hero section */}
-      <section className="p-6 md:p-10 lg:p-16  " id="home">
-        <div className="bg-[#E6E6E6] space-y-6   p-16 min-h-[70vh] rounded-xl flex flex-col justify-center"
-        
-        >
+      <section className="p-6 md:p-10 lg:p-16 scroll-mt-[50px]  " id="home">
+        <div className="bg-[#E6E6E6] space-y-6   p-16 min-h-[70vh] rounded-xl flex flex-col justify-center">
           <h1 className="font-2 text-black heading-1  text-center">
             Build <span className="text-[#0C1DC9]">your landings</span> in
             minutes
@@ -158,6 +157,9 @@ function Home() {
       <Team />
       {/* Testimonial */}
       <Testimonial />
+
+      {/* Blog Section  */}
+      <Blog/>
 
       {/* Contact  */}
       <Contact />

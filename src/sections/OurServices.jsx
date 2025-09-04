@@ -78,7 +78,7 @@ function OurServices() {
 
   return (
     <section
-      className="px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16 text-center space-y-6"
+      className="px-4 py-8 md:px-8 md:py-12 lg:px-16 lg:py-16 text-center space-y-6 scroll-mt-[50px]"
       id="services"
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">

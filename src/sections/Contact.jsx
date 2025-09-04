@@ -2,7 +2,7 @@ import React from 'react'
 import ServicesImage from "../assets/Services/ServiceImage1.jpg"
 function Contact() {
   return (
-  <div className="p-6 md:p-10 lg:p-16 scroll-mt-10" id="contact">
+  <div className="p-6 md:p-10 lg:p-16 scroll-mt-[50px]" id="contact">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           <div>
             <img src={ServicesImage} className="rounded-4xl h-full" />

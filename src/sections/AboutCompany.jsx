@@ -2,7 +2,7 @@ import React from 'react'
 import AboutImage from "../assets/Company/AboutCompany.jpg"
 function AboutCompany() {
   return (
-     <div className="p-6 md:p-10 lg:p-16 scroll-mt-10" id="about">
+     <div className="p-6 md:p-10 lg:p-16 scroll-mt-[50px]" id="about">
            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
              <div className="space-y-10">
                <h2 className="heading-1">
