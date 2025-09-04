@@ -64,7 +64,7 @@ const Blog = () => {
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   return (
-    <section className="p-6 md:p-12 bg-gray-50 dark:bg-[#0f0f0f]">
+    <section className="p-6 md:p-12 bg-gray-50 dark:bg-[#0f0f0f] scroll-mt-[50px]" id="blog">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
         Our Blogs
       </h2>
@@ -87,7 +87,12 @@ const Blog = () => {
             <p className="text-gray-700 dark:text-gray-300">
               {blog.description}
             </p>
-            <button onClick={() => setSelectedBlog(blog)} className="primary-button">Read More</button>
+            <button
+              onClick={() => setSelectedBlog(blog)}
+              className="primary-button"
+            >
+              Read More
+            </button>
           </div>
         ))}
       </div>
@@ -111,7 +116,7 @@ const Blog = () => {
                 className="p-1.5 bg-[#0302C1] cursor-pointer text-white rounded-lg shadow-md transition"
                 onClick={() => setSelectedBlog(null)}
               >
-                <FontAwesomeIcon icon={faX} fontSize={18}/>
+                <FontAwesomeIcon icon={faX} fontSize={18} />
               </button>
             </div>
 

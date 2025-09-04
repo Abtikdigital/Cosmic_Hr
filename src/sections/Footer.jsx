@@ -44,6 +44,8 @@ function Footer() {
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
               { id: "services", label: "Services" },
+              { id: "blogs", label: "Blogs" },
+
               { id: "contact", label: "Contact" },
             ].map((link, i) => (
               <li
@@ -66,24 +68,25 @@ function Footer() {
           <ul className="space-y-3">
             <li>
               <a
-                href="tel:+919245678900"
+                href="tel:+91 70219 97296
+"
                 className="flex items-center gap-3 text-white hover:text-gray-200"
               >
                 <FontAwesomeIcon icon={faPhone} />
                 <span className="relative inline-block group">
-                  +91 92 456 789 00
+                  +91 70219 97296
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </span>
               </a>
             </li>
             <li>
               <a
-                href="mailto:info@hrsolutions.com"
+                href="mailto:Colaboratehr33@gmail.com"
                 className="flex items-center gap-3 text-white hover:text-gray-200"
               >
                 <FontAwesomeIcon icon={faEnvelope} />
                 <span className="relative inline-block group">
-                  info@hrsolutions.com
+                  Colaboratehr33@gmail.com
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </span>
               </a>
@@ -92,7 +95,7 @@ function Footer() {
               <div className="flex items-center gap-3 text-white hover:text-gray-200 cursor-pointer">
                 <FontAwesomeIcon icon={faLocationDot} />
                 <span className="relative inline-block group">
-                  104, Testing Kolhapur, Maharashtra - 367849
+                Flat B/904, Plot-69, Concept Unnathi, Sector 21, Kharghar, Panvel, Maharashtra, India - 41021
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </span>
               </div>
