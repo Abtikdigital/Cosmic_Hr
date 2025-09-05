@@ -10,53 +10,77 @@ import { useInView } from "react-intersection-observer";
 const Blog = () => {
   const blogs = [
     {
-      heading: "Web Development Trends 2025",
+      heading: "The Untapped Talent Pool: How Hiring Housewives is a Smart Business Strategy",
       img: Image1,
-      description: "Discover the latest web development technologies shaping 2025.",
+      description: "Discover how your business can tap into an underutilized, highly-committed talent pool for unparalleled growth and stability.",
       details: [
         {
-          subHeading: "Frontend",
-          description: "Modern frontend frameworks are evolving rapidly.",
-          points: ["React 19", "Vue 4", "Svelte 5"],
+          subHeading: "The Business Case for This Talent",
+          description: "This demographic offers unique advantages that directly benefit your bottom line and workplace culture.",
+          points: [
+            "Increased Employee Stability & Retention",
+            "High Commitment & Strong Work Ethic",
+            "Rich Life and Professional Experience",
+          ],
         },
         {
-          subHeading: "Backend",
-          description: "Serverless and edge computing are gaining traction.",
-          points: ["Node.js 22", "Deno 3", "Bun"],
+          subHeading: "Bridging the Gap to Opportunity",
+          description: "We connect businesses with this valuable talent pool, promoting financial independence and skill-based employment.",
+          points: [
+            "Tailored Training and Upskilling Programs",
+            "Roles Designed for Flexibility and Meaningful Impact",
+            "Empowering Women for Financial Independence",
+          ],
         },
       ],
     },
     {
-      heading: "Digital Marketing Strategies",
+      heading: "Beyond Spreadsheets: Why SMEs Need a Full-Stack HR Solution",
       img: Image2,
-      description: "Effective strategies to boost your online business.",
+      description: "Learn why relying on outdated HR methods is a costly mistake and how a single, integrated solution can drive your business forward.",
       details: [
         {
-          subHeading: "SEO",
-          description: "Search Engine Optimization remains critical.",
-          points: ["AI-driven SEO", "Core Web Vitals", "Voice Search"],
+          subHeading: "The Hidden Costs of Manual HR",
+          description: "Manual processes and outdated methods lead to significant inefficiencies and compliance risks that hinder growth.",
+          points: [
+            "Time Wasted on Repetitive Tasks",
+            "High Risk of Costly Compliance Errors",
+            "Lack of Real-Time Workforce Data",
+          ],
         },
         {
-          subHeading: "Social Media",
-          description: "Platforms are shifting towards short-form content.",
-          points: ["Instagram Reels", "TikTok Ads", "YouTube Shorts"],
+          subHeading: "Your All-in-One HR Partner",
+          description: "Our end-to-end HR services combine technology with human expertise to manage all your workforce needs efficiently.",
+          points: [
+            "Seamless Recruitment & Staffing",
+            "Automated Payroll & Compliance Management",
+            "Intuitive HRMS Software for Easy Operations",
+          ],
         },
       ],
     },
     {
-      heading: "Digital Marketing Strategies",
+      heading: "Purpose-Driven HR: The Secret to Boosting Employee Retention and Engagement",
       img: Image3,
-      description: "Effective strategies to boost your online business.",
+      description: "Find out how aligning your HR strategy with a social mission can build a more loyal, engaged, and productive workforce.",
       details: [
         {
-          subHeading: "SEO",
-          description: "Search Engine Optimization remains critical.",
-          points: ["AI-driven SEO", "Core Web Vitals", "Voice Search"],
+          subHeading: "What is Purpose-Driven HR?",
+          description: "This modern approach aligns a company's HR practices with its core ethical and social values to create a positive impact.",
+          points: [
+            "Building a Socially Responsible Brand",
+            "Attracting and Retaining Values-Aligned Talent",
+            "Contributing to Meaningful Social Change",
+          ],
         },
         {
-          subHeading: "Social Media",
-          description: "Platforms are shifting towards short-form content.",
-          points: ["Instagram Reels", "TikTok Ads", "YouTube Shorts"],
+          subHeading: "The Impact on Your Workforce",
+          description: "When employees believe in your company's purpose, they become more loyal and committed to its success.",
+          points: [
+            "Increased Employee Pride and Morale",
+            "Higher Engagement and Productivity",
+            "Reduced Attrition and Recruitment Costs",
+          ],
         },
       ],
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import ServicesImage from "../assets/Services/ServiceImage1.jpg";
+import ServicesImage from "../assets/Contact/ContactImage1.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -43,7 +43,7 @@ function Contact() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <img src={ServicesImage} className="rounded-4xl h-full" alt="Contact" />
+          <img src={ServicesImage} className="rounded-4xl h-full  w-full " alt="Contact" />
         </motion.div>
         <motion.div
           className="space-y-6"

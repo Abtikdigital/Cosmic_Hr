@@ -1,31 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ServiceImage1 from "../assets/Services/ServiceImage1.jpg"
+import ServiceImage2 from "../assets/Services/ServiceImage2.png"
+import ServiceImage3 from "../assets/Services/ServiceImage3.png"
+import ServiceImage4 from "../assets/Services/ServiceImage4.png"
 
 const services = [
   {
     name: "End-to-End HR Services",
     description: "Streamlined HR for recruitment, payroll, and compliance.",
     highlight: "Saves time, boosts business growth.",
-    img: "https://images.unsplash.com/photo-1516321310765-79e5e2055a17?w=900&auto=format&fit=crop&q=60",
+    img: ServiceImage1,
   },
   {
     name: "HRMS Software (SaaS)",
     description: "Cloud-based platform for payroll and performance tracking.",
     highlight: "Flexible subscription plans.",
-    img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=900&auto=format&fit=crop&q=60",
+    img: ServiceImage2,
   },
   {
     name: "Workforce Empowerment",
     description: "Employs women for inclusive, stable workplaces.",
     highlight: "Bridges India’s gender gap.",
-    img: "https://images.unsplash.com/photo-1573164574511-73c773193279?w=900&auto=format&fit=crop&q=60",
+    img: ServiceImage3,
   },
   {
     name: "Learning & Development",
     description: "Training for skills and employee engagement.",
     highlight: "Enhances workforce productivity.",
-    img: "https://images.unsplash.com/photo-1516321165247-7d868bd47e26?w=900&auto=format&fit=crop&q=60",
+    img: ServiceImage4,
   },
 ];
 

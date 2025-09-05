@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/Logo/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,12 +12,51 @@ import {
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleEmailSubmit = async () => {
+    if (!email) {
+      Swal.fire("Error", "Please enter a valid email!", "error");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Replace this URL with your marketing/email API endpoint
+      const response = await axios.post("https://example.com/api/subscribe", {
+        email: email,
+      });
+
+      if (response.status === 201) {
+        Swal.fire("Success", "You have been subscribed successfully!", "success");
+        setEmail(""); // Clear input
+      } else {
+        Swal.fire(
+          "Error",
+          "Something went wrong! Please try again later.",
+          "error"
+        );
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire(
+        "Error",
+        error.response?.data?.message || "Failed to subscribe!",
+        "error"
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -33,11 +72,41 @@ function Footer() {
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full sm:w-56 bg-white p-2.5 rounded-xl text-black focus:outline-none"
               placeholder="Enter your email"
+              disabled={loading}
             />
-            <button className="bg-white font-semibold text-base text-[#0B1CC8] py-2.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all">
-              Submit
+            <button
+              onClick={handleEmailSubmit}
+              className="bg-white font-semibold text-base text-[#0B1CC8] py-2.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+              disabled={loading}
+            >
+              {loading ? (
+                <svg
+                  className="animate-spin h-5 w-5 text-[#0B1CC8]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
           <div className="flex gap-2 items-center">

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "../assets/Company/AboutCompany.jpg";
+import AboutImage from "../assets/Company/AboutCompany.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 

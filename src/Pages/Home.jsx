@@ -228,7 +228,7 @@ function Home() {
       <AboutCompany />
       <OurServices />
       <Team />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Blog />
       <Contact />
       <Footer />
