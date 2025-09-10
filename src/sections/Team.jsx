@@ -5,11 +5,15 @@ import ServicesImage from "../assets/Services/ServiceImage1.jpg";
 
 const teamMembers = [
   {
-    name: "Swayamsiddhi",
+    name: "Sumitra Parida",
     title: "Authorized Director & Founder",
     img: ServicesImage,
   },
-  { name: "Sumitra Parida", title: "Director", img: ServicesImage },
+  {
+    name: "Swayamsiddhi",
+    title: "Director",
+    img: ServicesImage,
+  },
 ];
 
 function Team() {
@@ -44,7 +48,11 @@ function Team() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: i * 0.2 }}
           >
-            <img src={member.img} className="rounded-4xl max-h-72" alt={member.name} />
+            <img
+              src={member.img}
+              className="rounded-4xl max-h-72"
+              alt={member.name}
+            />
             <h2 className="text-[#0B1CC8] font-semibold font-1 text-lg">
               {member.name}
             </h2>
