@@ -94,7 +94,7 @@ function Home() {
 
     try {
       const response = await axios.post(
-        "https://api.example.com/submit-consultation",
+        "/api/jobApplicationApi.js",
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },
