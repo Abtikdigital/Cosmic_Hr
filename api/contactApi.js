@@ -117,34 +117,45 @@ const firmTemplate = (data) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <style>
-          body { margin:0; font-family: Arial, sans-serif; background:#f0f6fc; padding:30px; }
-          .wrapper { max-width:650px; margin:auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1); }
-          .header { background:linear-gradient(135deg,#007BFF,#00AEEF); padding:30px; text-align:center; color:#fff; font-size:28px; font-weight:700; }
-          .content { padding:30px; color:#333; }
-          h2 { font-size:22px; margin-bottom:15px; color:#007BFF; }
-          p { margin-bottom:20px; line-height:1.6; }
-          table { width:100%; border-collapse:collapse; margin-top:20px; }
-          th { background:#007BFF; color:#fff; padding:12px; text-align:left; width:30%; }
-          td { background:#f9f9f9; padding:12px; }
-          tr:nth-child(even) td { background:#eef5fb; }
-          .footer { text-align:center; padding:20px; background:#f7faff; font-size:13px; color:#666; border-top:1px solid #ddd; }
-        </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
-        <div class="wrapper">
-          <div class="header">Cosmic HR Solutions</div>
-          <div class="content">
-            <h2>📩 New Contact Form Submission</h2>
-            <p>You have received a new contact form submission with the following details:</p>
-            <table>
-              <tr><th>Name</th><td>${name}</td></tr>
-              <tr><th>Email</th><td><a href="mailto:${email}">${email}</a></td></tr>
-              <tr><th>Number</th><td><a href="tel:+91${number}">${number}</a></td></tr>
-              <tr><th>Message</th><td>${message}</td></tr>
+      <body style="margin:0; font-family: Arial, sans-serif; background:#f0f6fc; padding:30px;">
+        <div style="max-width:650px; margin:auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
+          
+          <!-- Header -->
+          <div style="background:linear-gradient(135deg,#007BFF,#00AEEF); padding:30px; text-align:center; color:#fff; font-size:26px; font-weight:700;">
+            Cosmic HR Solutions
+            <div style="font-size:16px; font-weight:400; margin-top:5px;">📩 New Contact Form Submission</div>
+          </div>
+          
+          <!-- Content -->
+          <div style="padding:30px; color:#333;">
+            <p style="font-size:15px; margin-bottom:20px;">You have received a new contact form submission with the following details:</p>
+            <table style="width:100%; border-collapse:collapse; font-size:14px;">
+              <tr>
+                <th style="background:#007BFF; color:#fff; padding:12px; text-align:left; width:30%;">Name</th>
+                <td style="background:#f9f9f9; padding:12px;">${name}</td>
+              </tr>
+              <tr>
+                <th style="background:#007BFF; color:#fff; padding:12px; text-align:left;">Email</th>
+                <td style="background:#eef5fb; padding:12px;"><a href="mailto:${email}" style="color:#007BFF; text-decoration:none;">${email}</a></td>
+              </tr>
+              <tr>
+                <th style="background:#007BFF; color:#fff; padding:12px; text-align:left;">Number</th>
+                <td style="background:#f9f9f9; padding:12px;"><a href="tel:+91${number}" style="color:#007BFF; text-decoration:none;">${number}</a></td>
+              </tr>
+              <tr>
+                <th style="background:#007BFF; color:#fff; padding:12px; text-align:left;">Message</th>
+                <td style="background:#eef5fb; padding:12px;">${message}</td>
+              </tr>
             </table>
           </div>
-          <div class="footer">This email was auto-generated. Please do not reply.</div>
+          
+          <!-- Footer -->
+          <div style="text-align:center; padding:20px; background:#f7faff; font-size:13px; color:#666; border-top:1px solid #ddd;">
+            This email was auto-generated. Please do not reply.
+          </div>
         </div>
       </body>
     </html>
@@ -159,41 +170,49 @@ const userTemplate = (data) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <style>
-          body { margin:0; font-family: Arial, sans-serif; background:#f0f6fc; padding:30px; }
-          .wrapper { max-width:650px; margin:auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1); }
-          .header { background:linear-gradient(135deg,#007BFF,#00AEEF); padding:30px; text-align:center; color:#fff; font-size:28px; font-weight:700; }
-          .content { padding:30px; color:#333; }
-          h2 { font-size:22px; margin-bottom:15px; color:#007BFF; }
-          p { margin-bottom:20px; line-height:1.6; }
-          .highlight { background:#eef5fb; border-left:4px solid #007BFF; padding:15px; margin:20px 0; }
-          .button { display:inline-block; padding:12px 24px; background:linear-gradient(135deg,#007BFF,#00AEEF); color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; }
-          .footer { text-align:center; padding:20px; background:#f7faff; font-size:13px; color:#666; border-top:1px solid #ddd; }
-          .social a { margin:0 8px; text-decoration:none; color:#007BFF; }
-        </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
-        <div class="wrapper">
-          <div class="header">Cosmic HR Solutions</div>
-          <div class="content">
-            <h2>✅ Thank You for Contacting Us</h2>
-            <p class="highlight">Dear ${name}, thank you for reaching out to <strong>Cosmic HR Solutions</strong>! We’ve received your message and our team will get back to you within 24-48 hours.</p>
-            <p>Meanwhile, feel free to explore our website and services.</p>
-            <center><a href="https://www.cosmichrsolutions.com" class="button">Visit Our Website</a></center>
+      <body style="margin:0; font-family: Arial, sans-serif; background:#f0f6fc; padding:30px;">
+        <div style="max-width:650px; margin:auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
+          
+          <!-- Header -->
+          <div style="background:linear-gradient(135deg,#007BFF,#00AEEF); padding:30px; text-align:center; color:#fff; font-size:26px; font-weight:700;">
+            Cosmic HR Solutions
+            <div style="font-size:16px; font-weight:400; margin-top:5px;">✅ Thank You for Contacting Us</div>
           </div>
-          <div class="footer">
-            <div class="social">
-              <a href="#">Facebook</a> • 
-              <a href="#">Instagram</a> • 
-              <a href="#">LinkedIn</a>
+          
+          <!-- Content -->
+          <div style="padding:30px; color:#333;">
+            <div style="background:#eef5fb; border-left:4px solid #007BFF; padding:15px; margin-bottom:20px; font-size:15px;">
+              Dear ${name}, thank you for reaching out to <strong>Cosmic HR Solutions</strong>!<br>
+              We’ve received your message and our team will get back to you within 24-48 hours.
             </div>
-            <div>© 2025 Cosmic HR Solutions. All rights reserved.</div>
+            <p style="margin-bottom:20px;">Meanwhile, feel free to explore our website and services.</p>
+            <center>
+              <a href="https://www.cosmichrsolutions.com" 
+                 style="display:inline-block; padding:12px 24px; background:linear-gradient(135deg,#007BFF,#00AEEF); 
+                        color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:15px;">
+                 Visit Our Website
+              </a>
+            </center>
+          </div>
+          
+          <!-- Footer -->
+          <div style="text-align:center; padding:20px; background:#f7faff; font-size:13px; color:#666; border-top:1px solid #ddd;">
+            <div style="margin-bottom:8px;">
+              <a href="#" style="margin:0 8px; text-decoration:none; color:#007BFF;">Facebook</a> • 
+              <a href="#" style="margin:0 8px; text-decoration:none; color:#007BFF;">Instagram</a> • 
+              <a href="#" style="margin:0 8px; text-decoration:none; color:#007BFF;">LinkedIn</a>
+            </div>
+            © 2025 Cosmic HR Solutions. All rights reserved.
           </div>
         </div>
       </body>
     </html>
   `;
 };
+
 
 // MAIN HANDLER
 const handler = async (req, res) => {

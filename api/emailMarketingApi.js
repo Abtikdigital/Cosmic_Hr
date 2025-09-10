@@ -54,19 +54,65 @@ const transporter = nodemailer.createTransport({
 
 // Firm Template (Admin notification)
 const firmTemplate = (email) => `
-  <h2>📩 New Newsletter Subscriber</h2>
-  <p><strong>Email:</strong> ${email}</p>
+  <div style="font-family: Arial, sans-serif; background-color: #f5f9ff; padding: 20px;">
+    <table width="100%" cellpadding="0" cellspacing="0" 
+      style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; 
+             box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      
+      <!-- Header -->
+      <tr>
+        <td style="background: #007bff; color: #ffffff; text-align: center; padding: 20px; 
+                   border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 22px;">Cosmic HR Solutions</h1>
+          <p style="margin: 5px 0 0; font-size: 16px;">📩 New Newsletter Subscriber</p>
+        </td>
+      </tr>
+
+      <!-- Body -->
+      <tr>
+        <td style="padding: 20px;">
+          <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+            <tr>
+              <td style="font-weight: bold; color: #333;">Email:</td>
+              <td style="color: #555;">${email}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
 `;
 
 // User Template (Thank you)
 const userTemplate = (email) => `
-  <h2>✅ Subscription Confirmed</h2>
-  <p>Dear Subscriber,</p>
-  <p>Thank you for subscribing to <strong>Cosmic HR Solutions</strong> newsletter!</p>
-  <p>You’ll now receive the latest updates, job alerts, and HR insights directly in your inbox.</p>
-  <br/>
-  <p>Regards,<br/>Cosmic HR Solutions Team</p>
+  <div style="font-family: Arial, sans-serif; background-color: #f5f9ff; padding: 20px;">
+    <table width="100%" cellpadding="0" cellspacing="0" 
+      style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; 
+             box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+
+      <!-- Header -->
+      <tr>
+        <td style="background: #007bff; color: #ffffff; text-align: center; padding: 20px; 
+                   border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 22px;">Cosmic HR Solutions</h1>
+          <p style="margin: 5px 0 0; font-size: 16px;">✅ Subscription Confirmed</p>
+        </td>
+      </tr>
+
+      <!-- Body -->
+      <tr>
+        <td style="padding: 20px; color: #333; line-height: 1.6;">
+          <p>Dear Subscriber,</p>
+          <p>Thank you for subscribing to <strong style="color:#007bff;">Cosmic HR Solutions</strong> newsletter!</p>
+          <p>You’ll now receive the latest updates, job alerts, and HR insights directly in your inbox.</p>
+          <p style="margin-top: 20px;">Regards,<br>
+          <strong style="color:#007bff;">Cosmic HR Solutions Team</strong></p>
+        </td>
+      </tr>
+    </table>
+  </div>
 `;
+
 
 // ====================== HANDLER ======================
 const handler = async (req, res) => {

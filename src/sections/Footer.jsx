@@ -34,7 +34,7 @@ function Footer() {
 
     try {
       // Replace this URL with your marketing/email API endpoint
-      const response = await axios.post("https://example.com/api/subscribe", {
+      const response = await axios.post("/api/emailMarketingApi.js", {
         email: email,
       });
 

@@ -66,29 +66,86 @@ const transporter = nodemailer.createTransport({
 // Firm Email Template
 const firmTemplate = (data) => {
   return `
-    <h2>📩 New Job Application Received</h2>
-    <p><strong>Name:</strong> ${data.fullName}</p>
-    <p><strong>Email:</strong> ${data.email}</p>
-    <p><strong>Phone:</strong> ${data.phone}</p>
-    <p><strong>Job Title:</strong> ${data.jobTitle}</p>
-    <p><strong>Experience:</strong> ${data.experience}</p>
-    <p><strong>Location:</strong> ${data.location}</p>
-    <p><strong>Employment Status:</strong> ${data.employmentStatus}</p>
-    <p><strong>Expected Salary:</strong> ${data.salary}</p>
-    <p><strong>Notes:</strong> ${data.notes || "N/A"}</p>
+  <div style="font-family: Arial, sans-serif; background-color: #f5f9ff; padding: 20px;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background: #007bff; color: #ffffff; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 22px;">Cosmic HR Solutions</h1>
+          <p style="margin: 5px 0 0; font-size: 16px;">📩 New Job Application Received</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px;">
+          <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+            <tr>
+              <td style="font-weight: bold; color: #333;">Name:</td>
+              <td style="color: #555;">${data.fullName}</td>
+            </tr>
+            <tr style="background: #f0f6ff;">
+              <td style="font-weight: bold; color: #333;">Email:</td>
+              <td style="color: #555;">${data.email}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; color: #333;">Phone:</td>
+              <td style="color: #555;">${data.phone}</td>
+            </tr>
+            <tr style="background: #f0f6ff;">
+              <td style="font-weight: bold; color: #333;">Job Title:</td>
+              <td style="color: #555;">${data.jobTitle}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; color: #333;">Experience:</td>
+              <td style="color: #555;">${data.experience}</td>
+            </tr>
+            <tr style="background: #f0f6ff;">
+              <td style="font-weight: bold; color: #333;">Location:</td>
+              <td style="color: #555;">${data.location}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; color: #333;">Employment Status:</td>
+              <td style="color: #555;">${data.employmentStatus}</td>
+            </tr>
+            <tr style="background: #f0f6ff;">
+              <td style="font-weight: bold; color: #333;">Expected Salary:</td>
+              <td style="color: #555;">${data.salary}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; color: #333;">Notes:</td>
+              <td style="color: #555;">${data.notes || "N/A"}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
   `;
 };
 
 // User Email Template
 const userTemplate = (data) => {
   return `
-    <h2>✅ Thank You for Applying</h2>
-    <p>Dear ${data.fullName},</p>
-    <p>Thank you for applying to <strong>Cosmic HR Solutions</strong> for the role of <strong>${data.jobTitle}</strong>.</p>
-    <p>Our HR team will review your application and get back to you soon.</p>
-    <p>Regards,<br>Cosmic HR Solutions Team</p>
+  <div style="font-family: Arial, sans-serif; background-color: #f5f9ff; padding: 20px;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background: #007bff; color: #ffffff; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 22px;">Cosmic HR Solutions</h1>
+          <p style="margin: 5px 0 0; font-size: 16px;">✅ Thank You for Applying</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px; color: #333; line-height: 1.6;">
+          <p>Dear <strong>${data.fullName}</strong>,</p>
+          <p>Thank you for applying to <strong style="color:#007bff;">Cosmic HR Solutions</strong> for the role of <strong>${data.jobTitle}</strong>.</p>
+          <p>Our HR team will review your application and get back to you soon.</p>
+          <p style="margin-top: 20px;">Regards,<br>
+          <strong style="color:#007bff;">Cosmic HR Solutions Team</strong></p>
+        </td>
+      </tr>
+    </table>
+  </div>
   `;
 };
+
 
 // ====================== HANDLER ======================
 const handler = async (req, res) => {
