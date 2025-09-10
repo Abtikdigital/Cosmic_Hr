@@ -55,17 +55,11 @@ const jobValidationSchema = joi.object({
 
 // ====================== MAILER ======================
 const transporter = nodemailer.createTransport({
-//   host: SMTP_HOST_NAME,
-//   port: SMTP_PORT,
-//   secure: SECURE === "true",
-//   auth: {
-//     user: SMTP_MAIL,
-//     pass: SMTP_PASS,
-//   },
- service: "gmail",
+  // For Gmail
+  service: "gmail",
   auth: {
     user: "jay.abtikservice@gmail.com",
-    pass: "loqa snky cwaa xady",
+    pass: "loqa snky cwaa xady", // ⚠️ Use app password
   },
 });
 
@@ -111,30 +105,13 @@ const handler = async (req, res) => {
       return res.status(400).json({ message: "Error parsing form data" });
     }
 
-    const {
-      fullName,
-      email,
-      phone,
-      jobTitle,
-      experience,
-      location,
-      employmentStatus,
-      salary,
-      notes,
-    } = fields;
+    // Normalize Formidable fields (convert arrays -> strings)
+    const data = {};
+    for (const key in fields) {
+      data[key] = Array.isArray(fields[key]) ? fields[key][0] : fields[key];
+    }
 
-    const { error } = jobValidationSchema.validate({
-      fullName,
-      email,
-      phone,
-      jobTitle,
-      experience,
-      location,
-      employmentStatus,
-      salary,
-      notes,
-    });
-
+    const { error } = jobValidationSchema.validate(data);
     if (error) {
       return res.status(400).json({ message: error.details[0].message });
     }
@@ -149,19 +126,7 @@ const handler = async (req, res) => {
     }
 
     // Save to DB
-    const newJob = new JobModel({
-      fullName,
-      email,
-      phone,
-      jobTitle,
-      experience,
-      location,
-      employmentStatus,
-      salary,
-      notes,
-      resume: resumePath,
-    });
-
+    const newJob = new JobModel({ ...data, resume: resumePath });
     await newJob.save();
 
     // Send Emails
@@ -169,14 +134,14 @@ const handler = async (req, res) => {
       transporter.sendMail({
         from: SMTP_MAIL,
         to: SMTP_MAIL,
-        subject: `New Job Application: ${jobTitle}`,
-        html: firmTemplate(newJob),
+        subject: `New Job Application: ${data.jobTitle}`,
+        html: firmTemplate(data),
       }),
       transporter.sendMail({
         from: SMTP_MAIL,
-        to: email,
+        to: data.email,
         subject: "Thank You for Applying - Cosmic HR Solutions",
-        html: userTemplate(newJob),
+        html: userTemplate(data),
       }),
     ]);
 
