@@ -124,7 +124,7 @@ const Blog = () => {
 
       {/* Blog Grid */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
